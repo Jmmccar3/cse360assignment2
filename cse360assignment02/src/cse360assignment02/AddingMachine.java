@@ -1,39 +1,43 @@
-/*
- I'm not sure what I am supposed to comment...
- */
 package cse360assignment02;
 
 public class AddingMachine 
 {
 	private int total;
+	private String history; //keeps the history of addition and subtraction in a string
   
-	public AddingMachine () 
+	public AddingMachine() 
 	{
-		total = 0;  // not needed - included for clarity
+		history = "0";
 	}
   
-	public int getTotal () 
+	public int getTotal () //return current total
 	{
-		return 0;
+		return total;
 	}
   
-	public void add (int value) 
+	public void add(int value) //add parameter to the total variable
 	{
+		total = total + value;
+		
+	
+		history = history + " + " + value;
 		
 	}
 
-	public void subtract (int value) 
+	public void subtract(int value) //subtract parameter from total
 	{
+		total = total - value;
 		
+		history = history + " - " + value;
 	}
 
-	public String toString () 
+	public String toString() //returns history of add/subtract in a string
 	{
-		return "";
+		return history;
 	}
 
 	public void clear() 
 	{
-		
+		history = "0";
 	}
 }
